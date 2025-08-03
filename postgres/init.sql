@@ -1,0 +1,3 @@
+-- Inicialización simple para testing
+-- La base de datos mlops_db se crea automáticamente por variables de entorno
+-- Las tablas se crean automáticamente por SQLAlchemy
