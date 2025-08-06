@@ -10,7 +10,11 @@ Este proyecto implementa una plataforma MLOps completa utilizando Ollama para el
 - **Orquestación**: Docker Compose y Kubernetes para despliegue en contenedores
 - **Ollama**: Motor de ejecución de modelos de lenguaje local
 
-## Arquitectura
+## Arquitectura de la solución
+
+![Arquitectura](arquitectura.jpg)
+
+### Componentes
 - **Backend** (FastAPI): Puerto 8000
 - **Frontend** (Streamlit): Puerto 8501  
 - **PostgreSQL**: Puerto 5432
@@ -27,6 +31,10 @@ docker-compose up -d
 ```bash
 deploy.bat
 ```
+
+## Consideraciones de Seguridad
+
+⚠️ **IMPORTANTE**: Antes del despliegue en producción, debe cambiar la contraseña por defecto de PostgreSQL por motivos de seguridad. La contraseña actual es solo para desarrollo local.
 
 ## Asistencia de Claude Code
 
