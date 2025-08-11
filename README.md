@@ -22,11 +22,6 @@ Este proyecto implementa una plataforma MLOps completa utilizando Ollama para el
 
 ## Despliegue
 
-### Docker Compose
-```bash
-docker-compose up -d
-```
-
 ### Kubernetes (Minikube)
 ```bash
 deploy.bat
