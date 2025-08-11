@@ -11,7 +11,7 @@ class OllamaService:
     async def generate_summary(self, text: str) -> str:
         """Generar resumen de 50 palabras usando Ollama"""
         
-        prompt = f"Resume este texto en 50 palabras: {text[4000]}"
+        prompt = f"Resume este texto en 50 palabras: {text[:4000]}"
         
         try:
             async with httpx.AsyncClient(timeout=120.0) as client:
@@ -41,7 +41,7 @@ class OllamaService:
     async def generate_response(self, query: str, context: str) -> str:
         """Generar respuesta basada en consulta y contexto de documentos"""
         
-        prompt = f"Basándote en este contexto: {context}\n\nResponde esta pregunta: {query}"
+        prompt = f"Basándote en este contexto: {context} Responde esta pregunta: {query}"
         
         try:
             async with httpx.AsyncClient(timeout=120.0) as client:

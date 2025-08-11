@@ -26,21 +26,21 @@ spec:
       containers:
       - name: ollama
         image: ollama-mlops-ollama:latest
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 11434
         env:
         - name: OLLAMA_HOST
           value: "0.0.0.0"
-        volumeMounts:
-        - name: ollama-storage
-          mountPath: /root/.ollama
+        # volumeMounts:
+        # - name: ollama-storage
+        #   mountPath: /root/.ollama
         resources:
           requests:
-            memory: "6Gi"
+            memory: "16Gi"
             cpu: "1000m"
           limits:
-            memory: "10Gi"
+            memory: "16Gi"
             cpu: "2000m"
         livenessProbe:
           httpGet:
@@ -48,10 +48,10 @@ spec:
             port: 11434
           initialDelaySeconds: 60
           periodSeconds: 30
-      volumes:
-      - name: ollama-storage
-        persistentVolumeClaim:
-          claimName: ollama-pvc
+      # volumes:
+      # - name: ollama-storage
+      #   persistentVolumeClaim:
+      #     claimName: ollama-pvc
 ---
 apiVersion: v1
 kind: Service

@@ -30,6 +30,9 @@ REM Esperar a que el backend esté listo
 kubectl wait --for=condition=ready pod -l app=backend --timeout=300s
 
 kubectl apply -f k8s/frontend-deployment.yaml
+REM Esperar a que el frontend esté listo                                                                                                                                                                          │ │
+echo ⏳ Esperando a que el frontend esté listo...
+kubectl wait --for=condition=ready pod -l app=frontend --timeout=300s
 echo Frontend deployado
 
 echo Despliegue completado!
